@@ -1,0 +1,110 @@
+
+  .hero-section {
+   
+    justify-content: space-around;
+    align-items: center;
+    height: 35vh;
+    margin-left: 110px;
+  }
+  .hero-img-container {
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    padding-top: 20px;
+    
+   
+  }
+  /* .hero-img-container > img {
+    width: 500px;
+  } */
+  .hero-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 40px;
+    
+  }
+  .hero-text-container > h1 {
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: hsl(233, 26%, 24%);
+    line-height: 1.1;
+  }
+  .hero-text-container > p {
+    margin-bottom: 15px;
+    font-weight: bolder;
+  }
+  .hero-text-container > button {
+    padding: 12px 28px;
+    border: none;
+    outline-width: 0;
+    color: white;
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: 400;
+    background-image: linear-gradient(
+      120deg,
+      hsl(192, 70%, 51%),
+      hsl(136, 65%, 51%)
+    );
+  
+  }
+
+  .a-button {
+    padding: 12px 28px;
+    border: none;
+    outline-width: 0;
+    color: white;
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: 400;
+    background-image: linear-gradient( 120deg, hsl(271deg 70% 51%), rgb(5 35 71) );
+  }
+  .container {
+    background-color: hsl(220, 16%, 96%);
+  }
+  .why-us {
+    padding-top: 10vh;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10vh;
+
+  }
+  .why-us > h1 {
+    font-size: 45px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: hsl(233, 26%, 24%);
+  }
+  .why-us > p {
+    color: hsl(233, 8%, 62%);
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  .features-section {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 10vh;
+  }
+  .feature-item > img {
+    width: 65px;
+    margin-bottom: 5px;
+  }
+  .feature-item > h1 {
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: hsl(233, 26%, 24%);
+  }
+  .feature-item > p {
+    color: hsl(233, 8%, 62%);
+    font-weight: 700;
+  }
+  

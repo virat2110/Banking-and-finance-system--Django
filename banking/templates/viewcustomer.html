@@ -1,0 +1,167 @@
+{% extends 'nava.html' %}
+
+
+  {%block content%}
+  <link rel="stylesheet" href="../static/viewcustomer.css">
+      <div class="viewcustomer">
+        
+        {% if user.is_superuser %}
+        <div class="vc-columns">
+          <h3>Fullname:- {{cust.fullname}}</h3>
+          <h3>Address:- {{cust.address}}</h3>
+        </div>
+        <div class="vc-columns">
+          <h3>Mobile/a.c:- {{cust.mobile}}</h3>
+          <h3>Govt. Id:- {{cust.gid}}</h3>
+        </div>
+        <div class="vc-columns">
+          <h3>Amount:- ₹{{cust.amount}}</h3>
+          <h3>Account type:- {{cust.type}}</h3>
+        </div>
+        <div class="vc-columns">
+          <h3>Gender:-  {{cust.gender}}</h3>
+          <h3>Join date:-  {{cust.date}}</h3>
+        </div>
+        <div class="vc-columns">
+        <h3>Email:- {{cust.email}}</h3>
+        <h3>D.O.B:- {{cust.dob}}</h3>
+      </div>
+      <div class="vc-columns">
+        <h3>Loan amount:- {{al.amount}}</h3>
+        <h3>Loan interest:- {{al.interest}}%</h3>
+      </div>
+       <div class="vc-columns">
+        <h3>Income:- {{al.income}}</h3>
+        <h3>Return period:- {{al.returnperiod}} month</h3>
+      </div>
+      </div>
+
+          <!-- withdrwal/deposit table -->
+<div>
+<table class="table1">
+  <caption class="cap">withdrwal/deposit history.</caption>
+<thead>
+    <tr>
+        <th>S No.</th>
+        <th>Account</th>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Date</th>
+    </tr>
+</thead>
+<body>
+    {% for i in opern %}
+    <tr>
+       <td>{{forloop.counter}}.</td>
+        <td>{{i.mobile}}</td>
+        <td>{{i.type}}</td>
+        <td>₹{{i.amount}}</td>
+        <td>{{i.date}}</td>
+    </tr>
+    {% endfor %}
+</body>
+
+</table>
+</div>
+
+
+ <!-- transfer table as sender  -->
+<div>
+  <table class="table1">
+    <caption class="cap">Amount transferred history.</caption>
+  <thead>
+      <tr>
+          <th>S No.</th>
+          <th>Sender</th>
+          <th>Receiver</th>
+          <th>Amount</th>
+          <th>Remark</th>
+          <th>Date</th>
+      </tr>
+  </thead>
+  <body>
+      {% for i in tfr1 %}
+      <tr>
+         <td>{{forloop.counter}}.</td>
+          <td>{{i.sender}}</td>
+          <td>{{i.receiver}}</td>
+          <td>₹{{i.amount}}</td>
+          <td>{{i.remark}}</td>
+          <td>{{i.date}}</td>
+      </tr>
+      {% endfor %}
+  </body>
+  
+  </table>
+  </div>
+
+        <!-- Received money. -->
+
+
+  <div>
+    <table class="table1">
+      <caption class="cap">Amount received history.</caption>
+    <thead>
+        <tr>
+            <th>S No.</th>
+            <th>Sender</th>
+            <th>Receiver</th>
+            <th>Amount</th>
+            <th>Remark</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <body>
+        {% for i in tfr2 %}
+        <tr>
+           <td>{{forloop.counter}}.</td>
+            <td>{{i.sender}}</td>
+            <td>{{i.receiver}}</td>
+            <td>₹{{i.amount}}</td>
+            <td>{{i.remark}}</td>
+            <td>{{i.date}}</td>
+        </tr>
+        {% endfor %}
+    </body>
+    
+    </table>
+    </div>
+
+    <!-- account updation history. -->
+
+    <div>
+      <table class="table1">
+        <caption class="cap">Account updation history.</caption>
+      <thead>
+          <tr>
+              <th>S No.</th>
+              <th>Mobile</th>
+              <th>Updation type</th>
+              <th>prev value</th>
+              <th>New value</th>
+              <th>Date</th>
+          </tr>
+      </thead>
+      <body>
+          {% for i in up %}
+          <tr>
+             <td>{{forloop.counter}}.</td>
+              <td>{{i.mobile}}</td>
+              <td>{{i.type}}</td>
+              <td>{{i.prevdata}}</td>
+              <td>{{i.newdata}}</td>
+              <td>{{i.date}}</td>
+          </tr>
+          {% endfor %}
+      </body>
+      
+      </table>
+      </div>
+
+{%else%}
+  <h3>You are not authenticated to use this page.</h3>
+{% endif %}
+
+
+        
+  {%endblock%}

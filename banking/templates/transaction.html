@@ -1,0 +1,30 @@
+{% extends 'nava.html' %}
+  {%block content%}
+  <link rel="stylesheet" href="../static/txn1.css">
+  <section>
+    <table class="table1">
+        <thead>
+            <tr>
+                <th>S No.</th>
+                <th>Account</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <body>
+            {% for i in txn %}
+            <tr>
+               <td>{{forloop.counter}}.</td>
+                <td>{{i.mobile}}</td>
+                <td>{{i.type}}</td>
+                <td>₹{{i.amount}}</td>
+                <td>{{i.date}}</td>
+            </tr>
+            {% endfor %}
+        </body>
+
+    </table>
+</section>
+
+  {% endblock %}

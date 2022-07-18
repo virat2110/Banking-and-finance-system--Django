@@ -1,0 +1,68 @@
+{% extends 'nava.html' %}
+
+  <head>
+    <meta charset="UTF-8">
+    
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   
+  
+   {%block content%}
+   <link rel="stylesheet" href="../static/register.css">
+  <div class="container">
+    
+    <div class="title">Customer updation page.</div>
+    
+    {% for message in messages %}
+	  {{ message }}
+	  {% endfor %}
+
+    <div class="content">
+      <form method="post" action="">
+        {% csrf_token %}
+
+        <div class="user-details">
+
+            <div class="input-box">
+                <span class="details">mobile</span>
+                <input type="text" name="mobile" pattern="[6789][0-9]{9}" placeholder="mobile or a/c no."  required>
+              </div>
+
+              <div class="input-box">
+                <span class="details">gid</span>
+                <input type="text" name="gid" placeholder="verify govt. id"  required>
+              </div>
+
+
+
+              <div class="input-box">
+                <label for="chose">type</label>
+                     <select class="details" style="height: 40px;" name="choose" id="type">
+                       <option value="email">email</option>
+                       <option value="fullname">full name</option>
+                       <option value="address">address</option>
+                       <option value="nominee">nominee</option>
+                     </select>
+                     </div>
+
+
+
+
+          <div class="input-box">
+            <span class="details">New value</span>
+            <input type="text" name="update" placeholder="Provide value to update" required>
+          </div>
+
+          
+                 
+        </div>
+        <div class="button">
+          <input type="submit" value="submit">
+        </div>
+      </form>
+
+	 
+
+    </div>
+  </div>
+  {% endblock %}

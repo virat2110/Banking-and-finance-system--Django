@@ -1,0 +1,98 @@
+{% extends 'nava.html' %}
+
+  <head>
+    <meta charset="UTF-8">
+    
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   
+  
+   {%block content%}
+   <link rel="stylesheet" href="../static/register.css">
+  <div class="container">
+    
+    <div class="title">Loan Request form.</div>
+    {% for message in messages %}
+	  {{ message }}
+	  {% endfor %}
+    <div class="content">
+      <form method="post" action="">
+        {% csrf_token %}
+        <div class="user-details">
+
+          <div class="input-box">
+            <span class="details">mobile</span>
+            <input type="text" name="mobile" pattern="[6789][0-9]{9}" placeholder="a/c no."  required>
+          </div>
+
+          
+
+          <div class="input-box">
+            <span class="details">Id proof no.</span>
+            <input type="text" name="gid" placeholder="Verify govt. id proof" required>
+          </div>
+          
+
+          <div class="input-box">
+            <span class="details">Amount</span>
+            <input type="number" name="amount" placeholder="Loan amount" required>
+          </div>
+
+          <div class="input-box">
+            <label for="type">Purpose:</label>
+                 <select class="details" style="height: 40px;" name="purpose" id="purpose">
+                   <option value="education">Education loan</option>
+                   <option value="home">Home loan</option>
+                   <option value="Personal">Personal loan</option>
+                   <option value="business">Business loan</option>
+                   <option value="agriculture">Agriculture loan</option>
+                 </select>
+                 </div>
+
+
+
+                 <div class="input-box"> 
+                  <label for="status">Employement status</label>
+                       <select class="details" style="height: 40px;" name="status" id="status">
+                         <option value="salaried">Salaried</option>
+                         <option value="ownbusiness">Own business</option>
+                         <option value="farmer">Farmer</option>
+                         <option value="student">Student</option>
+                         <option value="unemployeed">Unemployeed</option>
+                       </select>
+                       </div>
+
+
+
+                       <div class="input-box"> 
+                        <label for="prevloan">Any prev loan</label>
+                             <select class="details" style="height: 40px;" name="prevloan" id="prevloan">
+                               <option value="yes">Yes</option>
+                               <option value="no">No</option>
+                             </select>
+                             </div>
+
+
+
+                             <div class="input-box">
+                              <span class="details">Return period</span>
+                              <input type="number" name="returnperiod" placeholder="Return period in months" required>
+                            </div>
+
+                            <div class="input-box">
+                              <span class="details">Salary income</span>
+                              <input type="number" name="income" placeholder="income per annum." required>
+                            </div>
+
+
+        </div>
+        <div class="button">
+          <input type="submit" value="submit">
+        </div>
+      </form>
+
+	 
+
+    </div>
+  </div>
+  {% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'nava.html' %}
+
+  <head>
+    <meta charset="UTF-8">
+    
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   
+  
+   {%block content%}
+   <link rel="stylesheet" href="../static/register.css">
+  <div class="container">
+    
+    <div class="title">Loan approval page.</div>
+    {% if user.is_superuser %}
+    {% for message in messages %}
+	  {{ message }}
+	  {% endfor %}
+    <div class="content">
+
+      <form method="post" action="">
+        {% csrf_token %}
+        <div class="user-details">
+
+          <div class="input-box">
+            <label for="type">Customer list</label>
+                 <select class="details" style="height: 40px;" name="account" id="account">
+                  {% for i in loan %}
+                   <option value="{{ i.mobile }}">{{ i.mobile }}</option>
+                   {% endfor %}
+                 </select>
+                 </div>
+
+                 <div class="input-box"> 
+                  <label for="approved">Approval</label>
+                       <select class="details" style="height: 40px;" name="approved" id="approved">
+                         <option value="yes">Yes</option>
+                         <option value="no">No</option>
+                         
+                       </select>
+                       </div>
+                       <div class="input-box">
+                        <span class="details">Interest</span>
+                        <input type="number" step="any" name="interest" placeholder="Interest filnalized" required>
+                      </div>
+
+                      <div class="input-box">
+                        <span class="details">Remark</span>
+                        <input type="text" name="remark" placeholder="Remark" required>
+                      </div>
+                    
+
+        </div>
+        <div class="button">
+          <input type="submit" value="submit">
+        </div>
+      </form>
+
+      {% else %}
+      <h3>You are not authenticated to view this page</h3>
+      {% endif %}
+
+    </div>
+  </div>
+  {% endblock %}

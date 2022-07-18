@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    
+<head>
+  <title>AV BANKING SOLUTION.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../static/nava.css">
+  
+</head>
+<body>  
+ <header class="header">
+    <div class="container1">
+        <div class="row align-items-center justify-content-between">
+           <div class="logo">
+             <a href="/">AV Banking solution.</a>
+           </div>
+           <input type="checkbox" id="nav-check">
+           <label for="nav-check" class="nav-toggler">
+              <span></span>
+           </label>
+
+                <nav class="nav">
+                  <ul>
+                    {% if user.is_authenticated %}
+                    <div class="dropdown">
+                      <button class="dropbtn">View
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a href="/txn">All transactions</a>
+                        <a href="/viewcustomer">View Customer</a>
+                        <a href="/viewtransfer">All Transfers</a>
+                        <a href="/atmcard">ATM list</a>
+                      </div>
+                    </div>
+
+
+                    <div class="dropdown">
+                      <button class="dropbtn">Services
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a href="/applyforloan">Apply for loan</a>
+                    <a href="/loanapproval">Approve loan</a>
+                        <a href="/atm">Apply for ATM</a>
+                      </div>
+                    </div>
+                   
+
+                    <div class="dropdown">
+                      <button class="dropbtn">transactions
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a href="/operation">withdraw/deposit</a>
+                        <a href="/transfer">Transfer</a>
+                        <a href="/emiview">EMI payment</a>
+                        
+                         
+                      </div>
+                     </div>
+  
+                    <div class="dropdown">
+                      <button class="dropbtn">CRUD
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-content">
+                         <a href="/customer">New customer</a>
+                         <a href="/update">Update</a>
+                         <a href="/delete">Delete</a>
+                      </div>
+                    </div>
+
+
+                    <div class="dropdown">
+                      <button class="dropbtn">Hello, {{ user.first_name }}
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a href="{% url 'logout' %}">Logout</a>
+                      </div>
+                    </div>
+
+
+                    {% else %}
+                     <li><a href="/aboutus">About</a></li>
+                     <li><a href="{% url 'login' %}">Login</a></li>
+                     <li><a href="/register">Register</a></li>
+                     
+                     
+
+                     
+                    
+                     {% endif %}
+                  </ul>
+               </nav>
+              </div>
+        </div>
+    </div>
+ </header>
+
+            <div>
+        {% block content %}
+        {% endblock content %}
+            </div>
+
+</body>
+</html>

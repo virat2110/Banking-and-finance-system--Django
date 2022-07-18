@@ -1,0 +1,60 @@
+{% extends 'nava.html' %}
+
+  <head>
+    <meta charset="UTF-8">
+    
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+   </head>
+   
+  
+   {%block content%}
+   
+   <link rel="stylesheet" href="../static/register.css">
+  
+   
+  <div class="container">
+    <div class="title">AV Banking registration</div>
+    {% for message in messages %}
+	  {{ message }}
+	  {% endfor %}
+    <div class="content">
+      <form method="post" action="">
+        {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Fist name</span>
+            <input type="text" name="first_name" placeholder="Enter your first name" required>
+          </div>
+		  <div class="input-box">
+            <span class="details">last name</span>
+            <input type="text" name="last_name" placeholder="Enter your last name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">username</span>
+            <input type="text" name="username" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" name="email" placeholder="Enter your email" required>
+          </div>
+          
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" name="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" name="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Confirm your password" required>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="submit">
+        </div>
+      </form>
+
+	  
+
+    </div>
+  </div>
+  {% endblock %}

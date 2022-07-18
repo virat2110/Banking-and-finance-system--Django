@@ -1,0 +1,34 @@
+{% extends 'nava.html' %}
+  {%block content%}
+  <link rel="stylesheet" href="../static/viewatm.css">
+  <section>
+    <table class="table1">
+        <caption class="cap">Atm details.</caption>
+        <thead>
+            <tr>
+                <th>S No.</th>
+                <th>ACCOUNT</th>
+                <th>Name on card</th>
+                <th>Card Number</th>
+                <th>CVV</th>
+                <th>DATE</th>
+
+            </tr>
+        </thead>
+        <body>
+            {% for i in atm %}
+            <tr>
+               <td>{{forloop.counter}}.</td>
+                <td>{{i.mobile}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.card | stringformat:".6s" }}****</td>
+                <td>***</td>
+                <td>{{i.date}}</td>
+            </tr>
+            {% endfor %}
+        </body>
+
+    </table>
+</section>
+
+  {% endblock %}

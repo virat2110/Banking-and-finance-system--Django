@@ -1,0 +1,205 @@
+body{
+    
+	background-color: #EEEEEE;
+	background-image: url('../static/images/1.jpg');
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.table1{
+	
+	border-collapse: collapse;
+	padding-right: 5px;
+	padding-left: 5px;
+	box-shadow: 0 0 20px rbga(0, 0, 0, 0.15);
+    margin-left: 350px;
+    background-color: rgb(18, 155, 189);
+	width: 800px;
+	margin-top: 30px;
+	border-style: solid;
+	border-color: black;
+}
+.table1 thead tr{
+	background-color: #1d2b7e8f;
+	color: white;
+	text-align: left;
+	font-weight: bold;
+}
+.table1 th,
+.table1 td{
+	padding: 12px 15px;
+}
+.table1 tbody tr{
+	border-bottom: 1px solid #dddddd;
+}
+.table1 tbody tr:nth-of-type(even){
+	background-color: #f3f3f3b6;
+}
+.table1 tbody tr:last-of-type{
+	border-bottom: 2px solid #009879;
+}
+.center{
+	position: relative;
+	float:center;
+	background: linear-gradient(120deg,#696969, #87CEFA);
+	overflow: hidden;
+	margin-left: 80px;
+	margin-right: 80px;
+	padding-left: 25px;
+	padding-right: 25px;
+	border-radius: 10px;
+}
+.viewcustomer {
+    background: #FF416C;
+	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: #FFFFFF;
+	position: relative;
+    border-radius: 6px;
+	border-style: solid;
+	border-color: black;
+    display: block;
+    width: 900px;
+    margin-left: 300px;
+    height: 300px;
+    padding-top: 7px;
+    padding-left: 70px;
+    margin-top: 40px;
+}
+.viewcustomer2 {
+    background: #FF416C;
+	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: black;
+	position: relative;
+    border-radius: 6px;
+	border-style: solid;
+	border-color: black;
+    display: block;
+    width: 350px;
+    margin-left: 590px;
+    height: 250px;
+    padding-top: 7px;
+    padding-left: 70px;
+    margin-top: 40px;
+	font-weight: bolder;
+	display: flex;
+}
+.vc-columns {
+    display: flex;
+}
+.viewcustomer h3 {
+    min-width: 430px;
+    padding: 5px;
+	font-family: 'Poppins',sans-serif;
+	color: black;
+}
+
+.cap{
+	font-weight: bolder;
+	font-size: bolder;
+	color: black;
+	font-family: 'Poppins',sans-serif;
+	background-color: #87cefa;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+
+}
+
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 190px;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  font-weight: bolder;
+}
+ form .category{
+	display: flex;
+	width: 10px;
+	margin: 14px 0 ;
+	justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+	height: 18px;
+	width: 18px;
+	border-radius: 50%;
+	margin-right: 10px;
+	background: #d9d9d9;
+	border: 5px solid transparent;
+	transition: all 0.3s ease;
+}
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 45px;
+   width: 110px;
+   border-radius: 5px;
+   border: none;
+   color: rgb(238, 231, 231);
+   font-size: 18px;
+   font-weight: 500;
+   margin-left: 40px;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: rgb(10,60,128);
+background: linear-gradient(-135deg, rgba(10,60,128,1) 13%, rgba(56,107,200,1) 73%, rgba(84,151,231,1) 100%);
+ }
+ form .button input:hover{
+  background: rgb(10,60,128);
+background: linear-gradient(135deg, rgba(10,60,128,1) 13%, rgba(56,107,200,1) 73%, rgba(84,151,231,1) 100%);
+  }
+ 
+
+.input-box .details{
+  font-family: 'Poppins',sans-serif;
+  width: 190px;
+  font-weight: bolder;
+  color: black;
+  
+  
+}

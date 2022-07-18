@@ -1,0 +1,61 @@
+{% extends 'nava.html' %}
+
+  <head>
+    <meta charset="UTF-8">
+    
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   {%block content%}
+   <link rel="stylesheet" href="../static/register.css">
+  <div class="container">
+    
+    <div class="title">Transfer money.</div>
+    
+    {% for message in messages %}
+	  {{ message }}
+	  {% endfor %}
+
+    <div class="content">
+      <form method="post" action="">
+        {% csrf_token %}
+
+        <div class="user-details">
+
+            <div class="input-box">
+                <span class="details">Sender a/c</span>
+                <input type="text" name="sender" pattern="[6789][0-9]{9}" placeholder="Sender a/c"  required>
+              </div>
+
+
+              <div class="input-box">
+                <span class="details">gid</span>
+                <input type="text" name="gid" placeholder="Sender govt. Id"  required>
+              </div>
+
+          <div class="input-box">
+            <span class="details">Amount</span>
+            <input type="number" name="amount" placeholder="amount" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Receiver a/c</span>
+            <input type="text" name="receiver" pattern="[6789][0-9]{9}" placeholder="Receiver a/c"  required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Remark</span>
+            <input type="text" name="remark" placeholder="Enter your Remark" required>
+          </div>
+
+                 
+        </div>
+        <div class="button">
+          <input type="submit" value="submit">
+        </div>
+      </form>
+
+	 
+
+    </div>
+  </div>
+  {% endblock %}

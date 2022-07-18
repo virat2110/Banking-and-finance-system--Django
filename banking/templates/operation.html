@@ -1,0 +1,58 @@
+{% extends 'nava.html' %}
+
+  <head>
+    <meta charset="UTF-8">
+    
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   {%block content%}
+   <link rel="stylesheet" href="../static/register.css">
+  <div class="container">
+    
+    <div class="title">Withdrawl/deposit page.</div>
+    
+    {% for message in messages %}
+	  {{ message }}
+	  {% endfor %}
+
+    <div class="content">
+      <form method="post" action="">
+        {% csrf_token %}
+
+        <div class="user-details">
+
+            <div class="input-box">
+                <span class="details">mobile</span>
+                <input type="text" name="mobile" pattern="[6789][0-9]{9}" placeholder="mobile no. to deposit/withdraw"  required>
+              </div>
+
+
+              <div class="input-box">
+                <span class="details">gid</span>
+                <input type="text" name="gid" placeholder="verify govt. id"  required>
+              </div>
+
+          <div class="input-box">
+            <span class="details">Amount</span>
+            <input type="number" step="any" name="amount" placeholder="amount" required>
+          </div>
+
+          <div class="input-box">
+            <label for="type">type</label>
+                 <select class="details" style="height: 40px;" name="type" id="type">
+                   <option value="withdrawl">withdrawl</option>
+                   <option value="deposit">deposit</option>
+                 </select>
+                 </div>
+                 
+        </div>
+        <div class="button">
+          <input type="submit" value="submit">
+        </div>
+      </form>
+
+	 
+
+    </div>
+  </div>
+  {% endblock %}

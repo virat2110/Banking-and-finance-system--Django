@@ -1,0 +1,98 @@
+{% extends 'nava.html' %}
+
+  <head>
+    <meta charset="UTF-8">
+    
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   
+  
+   {%block content%}
+   <link rel="stylesheet" href="../static/register.css">
+  <div class="container">
+    
+    <div class="title">AV Banking registration</div>
+    {% for message in messages %}
+	  {{ message }}
+	  {% endfor %}
+    <div class="content">
+      <form method="post" action="">
+        {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">full name</span>
+            <input type="text" name="fullname" placeholder="Enter your full name" required>
+          </div>
+
+          
+          
+		  <div class="input-box">
+            <span class="details">address</span>
+            <input type="text" name="address" placeholder="Enter your address" required>
+          </div>
+          
+
+          <div class="input-box">
+            <span class="details">mobile</span>
+            <input type="text" name="mobile" pattern="[6789][0-9]{9}" placeholder="mobile(will be used as ur a/c no.)"  required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">nominee</span>
+            <input type="text" name="nominee" placeholder="nominee name" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Id proof no.</span>
+            <input type="text" name="gid" placeholder="govt. id proof" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" name="email" placeholder="Enter your email" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Amount</span>
+            <input type="number" name="amount" placeholder="Initial amount deposited" required>
+          </div>
+
+          <div class="input-box">
+            <label for="type">account-type:</label>
+                 <select class="details" style="height: 40px;" name="type" id="type">
+                   <option value="saving">saving</option>
+                   <option value="current">current</option>
+                 </select>
+                 </div>
+
+
+
+                 <div class="input-box"> 
+                  <label for="gender">Gender</label>
+                       <select class="details" style="height: 40px;" name="gender" id="gender">
+                         <option value="Male">Male</option>
+                         <option value="Female">Female</option>
+                         <option value="prefer not to say">prefer not to say</option>
+                       </select>
+                       </div>
+
+
+                       <div class="input-box">
+                        <label for="gender">D.O.B.</label>
+                       <input type="date" max="2006-01-01" name="dob">
+                      </div> 
+
+
+
+
+
+        </div>
+        <div class="button">
+          <input type="submit" value="submit">
+        </div>
+      </form>
+
+	 
+
+    </div>
+  </div>
+  {% endblock %}

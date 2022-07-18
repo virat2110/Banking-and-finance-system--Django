@@ -1,0 +1,32 @@
+{% extends 'nava.html' %}
+  {%block content%}
+  <link rel="stylesheet" href="../static/txn1.css">
+  <section>
+    <table class="table1">
+        <thead>
+            <tr>
+                <th>S No.</th>
+                <th>Sender</th>
+                <th>Receiver</th>
+                <th>Amount</th>
+                <th>Remark</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <body>
+            {% for i in tfr %}
+            <tr>
+               <td>{{forloop.counter}}.</td>
+                <td>{{i.sender}}</td>
+                <td>{{i.receiver}}</td>
+                <td>₹{{i.amount}}</td>
+                <td>{{i.remark}}</td>
+                <td>{{i.date}}</td>
+            </tr>
+            {% endfor %}
+        </body>
+
+    </table>
+</section>
+
+  {% endblock %}
